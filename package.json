@@ -62,6 +62,10 @@
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/markdown-it": "^12.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "cheerio": "^1.0.0-rc.5",
@@ -86,6 +90,7 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-scss": "^3.19.0",
+    "typescript": "^4.2.3",
     "ws": "^7.4.4"
   },
   "dependencies": {
