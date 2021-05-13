@@ -242,7 +242,10 @@ describe('Marpit', () => {
 
       it('wraps section with svg when inlineSVG is true', () => {
         const rendered = instance(true).render('# Hi')
-        const $ = cheerio.load(rendered.html, { lowerCaseTags: false })
+        const $ = cheerio.load(rendered.html, {
+          lowerCaseTags: false,
+          xmlMode: true,
+        })
 
         return postcssInstance
           .process(rendered.css, { from: undefined })
@@ -257,7 +260,10 @@ describe('Marpit', () => {
           const { html } = instance(true).render('# Hi', { htmlAsArray: true })
           expect(html).toHaveLength(1)
 
-          const $ = cheerio.load(html[0], { lowerCaseTags: false })
+          const $ = cheerio.load(html[0], {
+            lowerCaseTags: false,
+            xmlMode: true,
+          })
           expect($('svg > foreignObject')).toHaveLength(1)
         })
       })
@@ -330,12 +336,14 @@ describe('Marpit', () => {
       const markdown =
         '<style>@import "valid-theme";\nsection { --style: appended; }</style>'
 
-      it('appends style to css with processing', () => {
+      it('appends style to the last of css with processing', () => {
         const rendered = instance().render(markdown)
         const $ = cheerio.load(rendered.html)
 
         expect($('style')).toHaveLength(0)
-        expect(rendered.css).toContain('--style: appended;')
+        expect(rendered.css.trim().endsWith('{ --style: appended; }')).toBe(
+          true
+        )
         expect(rendered.css).toContain('/* @import "valid-theme"; */')
       })
 

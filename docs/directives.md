@@ -1,10 +1,10 @@
 # Directives
 
-Marpit Markdown has extended syntax called **"Directives"** to support writing awesome slides. It can control your slide-deck theme, page number, header, footer, style, and so on.
+Marpit Markdown uses extended syntax called **"Directives"** to support writing awesome slides. It can control your slide-deck theme, page number, header, footer, style, and so on.
 
 ## Usage
 
-The wrote directives would parse as [YAML](http://yaml.org/).
+The written directives would parse as [YAML](http://yaml.org/).
 
 When the value includes YAML special chars, you should wrap with quotes to be recognized correctly. You may enable a loose parsing by [`looseYAML` Marpit constructor option](https://marpit-api.marp.app/marpit) if you want.
 
@@ -56,7 +56,7 @@ The second page also has same color.
 
 #### Apply to a single page (Spot directives)
 
-If you want to apply local directives only to current page, you have to use prefix `_` to the name of directives.
+If you want to apply local directives only to the current page, you have to add the prefix `_` to the name of directives.
 
 ```markdown
 <!-- _backgroundColor: aqua -->
